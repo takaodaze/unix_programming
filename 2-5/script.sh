@@ -11,13 +11,13 @@ temp_file=/tmp/cdb.$$
 trap 'rm -f $temp_file' EXIT
 
 get_return() {
-  echo -e "Press return\c"
+  echo "Press return\c"
   read x
   return 0
 }
 
 get_confirm() {
-  echo -e "Are you sure? \c"
+  echo "Are you sure? \c"
   while true; do
     read x
     case "$x" in
@@ -50,7 +50,7 @@ set_menu_choice() {
 
   echo " q) Quit"
   echo
-  echo -e "Please enter choice then press return \c"
+  echo "Please enter choice then press return"
   read menu_choice
   return
 }
@@ -71,7 +71,7 @@ add_record_tracks() {
   cdtrack=1
   cdttitle=""
   while [ "$cdttitle" != "q" ]; do
-    echo -e "Track $cdtrack, trck title? \c"
+    echo "Track $cdtrack, trck title? \c"
     read tmp
     cdttitle=${tmp%%,*}
     if [ "$tmp" != "$cdttitle" ]; then
@@ -92,19 +92,19 @@ add_record_tracks() {
 
 add_records() {
   # Prompt for this initial infomation
-  echo -e "Enter catalog number \c"
+  echo "Enter catalog number \c"
   read tmp
   cdcatnum=${tmp%%,*}
 
-  echo -e "Enter title \c"
+  echo "Enter title \c"
   read tmp
   cdtitle=${tmp%%,*}
 
-  echo -e "Enter type \c"
+  echo "Enter type \c"
   read tmp
   cdtype=${tmp%%,*}
 
-  echo -e "Enter artist/composer \c"
+  echo "Enter artist/composer \c"
   read tmp
   cdac=${tmp%%,*}
 
@@ -133,7 +133,7 @@ find_cd() {
   fi
 
   cdcatnum=""
-  echo -e "Enter a string to search for in the CD titles \c"
+  echo "Enter a string to search for in the CD titles \c"
   read searchstr
   if [ "$searchstr" = "" ]; then
     return 0
@@ -182,7 +182,7 @@ find_cd() {
   get_return
 
   if [ "$asklist" = "y" ]; then
-    echo -e "View tracks for this CD? \c"
+    echo "View tracks for this CD? \c"
     read x
     if [ "$x" = "y" ]; then
       echo
