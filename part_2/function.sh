@@ -21,7 +21,7 @@ echo "script starting"
 foo
 echo "script ended"
 
-if yes_or_no true ; then
+if yes_or_no true; then
   echo YES!!!
 else
   echo NO!!!
