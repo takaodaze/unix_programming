@@ -1,5 +1,6 @@
 FROM ubuntu:latest
-RUN apt update
+RUN apt update && yes | unminimize
+RUN apt install -y man
 RUN apt install -y bc
 RUN DEBIAN_FRONTEND=noninteractive apt install -y gcc make git binutils libc6-dev gdb sudo
 RUN adduser --disabled-password --gecos '' user
