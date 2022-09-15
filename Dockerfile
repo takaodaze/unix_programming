@@ -4,6 +4,7 @@ RUN apt update && yes | unminimize
 # GNUツール
 RUN apt install -y man
 RUN DEBIAN_FRONTEND=noninteractive apt install -y gcc make git binutils libc6-dev gdb sudo
+RUN apt install -y gawk
 
 # 日本語入力
 RUN apt install -y language-pack-ja-base language-pack-ja 
