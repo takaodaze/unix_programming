@@ -12,6 +12,7 @@ ENV LANG=ja_JP.UTF-8
 
 # その他 ツールのインストール
 RUN apt install -y bc
+RUN apt install -y imagemagick
 
 RUN adduser --disabled-password --gecos '' user
 RUN echo 'user ALL=(root) NOPASSWD:ALL' > /etc/sudoers.d/user
